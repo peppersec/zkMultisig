@@ -19,7 +19,7 @@ contract zkMultisig is Verifier {
     state = _state;
   }
 
-  function changeState(bytes32 _newState) internal {
+  function changeState(bytes32 _newState) public onlyWallet {
     state = _newState;
     emit StateChange(_newState);
   }

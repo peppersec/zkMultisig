@@ -27,6 +27,7 @@ template Transaction(maxSignatures) {
   state === stateHasher.outs[0];
   sigCount === minSignatures;
 
+	// Verify signatures
   component sig_verifier[maxSignatures];
   for(var i = 0; i<maxSignatures; i++) {
     sig_verifier[i] = EdDSAMiMCSpongeVerifier();
